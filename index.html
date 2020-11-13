@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/base.css">
+    <link rel="stylesheet" href="./styles/layout.css">
+    <link rel="stylesheet" href="./styles/modules.css">
+    <link rel="stylesheet" href="./styles/state.css">
+    <link rel="stylesheet" href="./styles/theme.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <main>
+
+        <section id="quarantine-form-section">
+            <form id="quarantine-form">
+                <fieldset>
+                    <legend>Quarantine Time In days:</legend>
+                    <label for="days">Number of days for the quarantine:</label>
+                    <input type="number" id="days" name="days" required><br><br>
+                    <input type="submit" value="Count Down">
+                </fieldset>
+            </form>
+        </section>
+
+        <section id="quarantine-countdown-section">
+            <form id="countdown-form">
+                <fieldset>
+                    <legend>Reset countdown:</legend>
+                    <input type="submit" value="Reset">
+                </fieldset>
+            </form>
+            
+            <script id="countdown-date" type="text/x-tmpl-mustache">
+                <div>
+                    <span id="start-date">Quarantine Started on {{startDate}} </span>
+                    <span id="end-date">and will end on {{endDate}}.</span>
+                </div>
+            </script>
+            <script id="countdown" type="text/x-tmpl-mustache">
+                <div>
+                    <span id="days">{{days}}d </span>
+                    <span id="hours">{{hours}}h </span>
+                    <span id="mins">{{minutes}}m </span>
+                    <span id="secs">{{seconds}}s </span>
+                </div>
+            </script>
+            <br>
+            <div id="target-countdown-date"></div>
+            <br>
+            <div id="target-countdown"></div>
+            <br>
+            <div id="target-countdown-end">
+                <p>The Quarantine has ended!!</p>
+            </div>
+        </section>
+        
+    </main>
+
+    <script src="https://unpkg.com/mustache@latest"></script>
+    <script src="./scripts/app.js"></script>
+</body>
+
+</html>
