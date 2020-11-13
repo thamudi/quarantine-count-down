@@ -66,6 +66,8 @@ function checkLocalStorageStateType() { // check if the running state is count o
         renderCountdownDateSection();
         // Render the countdown script
         renderCountDownSection();
+        // Render the date of today
+        renderCurrentDate();
     } else if (localStorage.stateType === 'count') {
         // Hide the countdown block
         toggleCountdownContainer('none');
@@ -167,6 +169,22 @@ function renderCountSection() { // Renders the Quarantine countdown section
     let template = countDownParaId.innerHTML;
     let rendered = Mustache.render(template, localStorage);
     document.getElementById('target-count').innerHTML = rendered;
+}
+
+function renderCurrentDate() {
+    const countDownParaId = document.getElementById('date');
+    let template = countDownParaId.innerHTML;
+    const date = new QuarantineDate();
+
+    const day = {
+        'today': date.startDayText,
+        'day': date.startDay,
+        'month': date.startMonthText,
+        'year': date.startYear
+    };
+
+    let rendered = Mustache.render(template, day);
+    document.getElementById('target-date').innerHTML = rendered;
 }
 
 // ------------------------------
@@ -354,7 +372,7 @@ class QuarantineDate {
 
         // To calculate the no. of days between two dates 
         const differenceInDays = differenceInTime / (1000 * 3600 * 24);
-        return Math.floor(differenceInDays)+1;
+        return Math.floor(differenceInDays);
     }
 }
 

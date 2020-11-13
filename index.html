@@ -111,7 +111,16 @@
                         <span id="date">Today is {{today}} {{day}} of {{month}} {{year}}.</span>
                         <br>
                         <hr>
-                        <span id="end-date">And you have been locked up for:</span>
+                        <span id="end-date">And you have been locked up for</span>
+                    </div>
+                </script>
+                <script id="date" type="text/x-tmpl-mustache">
+                    <div>
+                        <br>
+                        <hr>
+                        <span id="date">Today is {{today}} {{day}} of {{month}} {{year}}.</span>
+                        <br>
+                        <hr>
                     </div>
                 </script>
                 <script id="count" type="text/x-tmpl-mustache">
@@ -129,6 +138,7 @@
                     <br>
                     <br>
                     <div id="target-countdown" class="railway"></div>
+                    <div id="target-date" ></div>
                 </div>
 
                 <div id="count-container">
