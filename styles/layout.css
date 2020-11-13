@@ -3,3 +3,20 @@ layout.css should contain general positioning on the page
 Apply to elements such as header, footer, nav, aside
 Classes and IDs can be included here
  */
+ .abs-display-left {
+    position: absolute;
+    top: 50%;
+    left: 12%;
+    transform: translate(0%,-50%);
+    -ms-transform: translate(-0%,-50%);
+    cursor: pointer;
+}
+
+.abs-display-right {
+    position: absolute;
+    top: 50%;
+    right: 12%;
+    transform: translate(0%,-50%);
+    -ms-transform: translate(0%,-50%);
+    cursor: pointer;
+}

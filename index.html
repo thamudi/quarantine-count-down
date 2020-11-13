@@ -24,31 +24,55 @@
             <canvas id="space" width="300" height="300"></canvas>
         </div>
         <section id="quarantine-form-section">
-            <div>
-                <form id="quarantine-days-form">
+            <div class="slides animate">
+                <div>
+                    <form id="quarantine-days-form">
+                        <fieldset>
+                            <legend>Quarantine Time In days:</legend>
+                            <label class="xanh" for="days">Enter Number of days for the Quarantine</label>
+                            <br>
+                            <br>
+                            <input type="number" id="days" class="railway" name="days" required>
+                            <br><br>
+                            <input type="submit" class="btn railway" value="Countdown the days">
+                            <br><br>
+                        </fieldset>
+                    </form>
+                </div>
+                <div>
+                    <form id="quarantine-count-days-form">
+                        <fieldset>
+                            <legend>Quarantine Time In days:</legend>
+                            <label class="xanh">Or</label>
+                            <br>
+                            <br>
+                            <input type="submit" class="btn railway" value="Count the days">
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+            <div class="slides animate">
+                <form id="quarantine-from-to-form">
                     <fieldset>
-                        <legend>Quarantine Time In days:</legend>
-                        <label class="xanh" for="days">Enter Number of days for the Quarantine</label>
+                        <legend>Quarantine Time from to</legend>
+                        <label for="from">Enter the starting day of the quarantine</label>
                         <br>
                         <br>
-                        <input type="number" id="days" class="railway" name="days" required>
-                        <br><br>
+                        <input type="date" class="railway" name="from" required>
+                        <br>
+                        <br>
+                        <label for="to">Enter the ending day of the quarantine</label>
+                        <br>
+                        <br>
+                        <input type="date" class="railway" name="to" required>
+                        <br>
+                        <br>
                         <input type="submit" class="btn railway" value="Countdown the days">
-                        <br><br>
                     </fieldset>
                 </form>
             </div>
-            <div>
-                <form id="quarantine-count-days-form">
-                    <fieldset>
-                        <legend>Quarantine Time In days:</legend>
-                        <label class="xanh">Or</label>
-                        <br>
-                        <br>
-                        <input type="submit" class="btn railway" value="Count the days">
-                    </fieldset>
-                </form>
-            </div>
+            <button class="abs-display-left btn no-border shadow" onclick="plusDivs(-1)">&#10094;</button>
+            <button class="abs-display-right btn no-border shadow" onclick="plusDivs(1)">&#10095;</button>
         </section>
 
         <section id="quarantine-countdown-section">
@@ -122,6 +146,7 @@
 
     <script src="https://unpkg.com/mustache@latest"></script>
     <script src="./scripts/app.js"></script>
+    <script src="./scripts/slide.js"></script>
     <script src="./scripts/space.js"></script>
 </body>
 

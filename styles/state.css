@@ -13,6 +13,10 @@ body{
     overflow: hidden;
 }
 
+.slides{
+  display: none;
+}
+
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -23,4 +27,31 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type=number] {
   -moz-appearance: textfield;
+}
+
+.btn:hover,input:hover,  input:focus{
+  transition: 1s;
+  border-color: black;
+  background-color: white;
+  color: black;
+}
+
+.shadow:hover{
+  text-shadow: 2px 2px white;
+  transition: 1s;
+  color: white;
+  background-color: transparent;
+}
+
+.animate{
+  animation: animate 1s;
+}
+
+@keyframes animate{
+  from{
+    right:-300px;opacity:0
+  } 
+  to{
+    bottom:0;opacity:1
+  }
 }
