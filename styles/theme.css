@@ -2,3 +2,30 @@
 theme.css should contain small changes on top of all other normal styling
 Applying temporary changes, such as a holiday theme
 */
+
+@import url('https://fonts.googleapis.com/css2?family=Xanh+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
+
+html{
+    background-color: black;
+    color: white;
+}
+
+.cont{
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+
+.xanh {
+    font-family: 'Xanh Mono', monospace;
+}
+
+.railway{
+    font-family: 'Raleway', sans-serif;
+}

@@ -3,6 +3,10 @@ base.css should contain any general styling on top of what is provided by a rese
 Apply to elements such as body and main
 Examples include styling of overall font and background color
 */
+*{
+    font-size: 3vh;
+}
+
 
 body {
     text-align: center;
@@ -17,7 +21,7 @@ section {
     margin: 2%;
 }
 
-fieldset, .field-set {
+section {
     width: fit-content;
     width: -moz-fit-content;
     margin: auto;
@@ -31,6 +35,10 @@ input {
 
 h1, h2, h3, h4, h5, h6{
     font-weight: bold;
+}
+
+h1{
+    font-size: 4vh;
 }
 
 input[type="text"],

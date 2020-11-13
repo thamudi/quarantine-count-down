@@ -3,3 +3,24 @@ modules.css should contain smaller components on the page
 Apply to elements such as list items, individual images, specific paragraphs
 Classes and descendant selectors should primarily be included here
  */
+
+ 
+
+
+ .btn, input {
+     transition: 1s;
+     border: 1px solid white;
+     background-color: black;
+     color: white;
+ }
+
+ .btn:hover,input:hover,  input:focus{
+     transition: 1s;
+     border-color: black;
+     background-color: white;
+     color: black;
+}
+
+.font-large {
+    font-size: larger;
+}

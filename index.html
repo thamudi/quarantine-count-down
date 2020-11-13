@@ -15,23 +15,25 @@
 
 <body>
     <header>
-        <h1>
+        <h1 class="xanh">
             Quarantine Countdown
         </h1>
     </header>
     <main>
-
+        <div class="cont" id="cont">
+            <canvas id="space" width="300" height="300"></canvas>
+        </div>
         <section id="quarantine-form-section">
             <div>
                 <form id="quarantine-days-form">
                     <fieldset>
                         <legend>Quarantine Time In days:</legend>
-                        <label for="days">Enter Number of days for the Quarantine</label>
+                        <label class="xanh" for="days">Enter Number of days for the Quarantine</label>
                         <br>
                         <br>
-                        <input type="number" id="days" name="days" required>
+                        <input type="number" id="days" class="railway" name="days" required>
                         <br><br>
-                        <input type="submit" value="Countdown the days">
+                        <input type="submit" class="btn railway" value="Countdown the days">
                         <br><br>
                     </fieldset>
                 </form>
@@ -40,10 +42,10 @@
                 <form id="quarantine-count-days-form">
                     <fieldset>
                         <legend>Quarantine Time In days:</legend>
-                        <label>Or</label>
+                        <label class="xanh">Or</label>
                         <br>
                         <br>
-                        <input type="submit" value="Count the days you have been locked up!">
+                        <input type="submit" class="btn railway" value="Count the days">
                     </fieldset>
                 </form>
             </div>
@@ -53,11 +55,11 @@
             <form id="countdown-form">
                 <fieldset>
                     <legend>Reset countdown:</legend>
-                    <input type="submit" value="Reset">
+                    <input type="submit" class="btn railway" value="Reset">
                 </fieldset>
             </form>
 
-            <div class="field-set">
+            <div>
                 <script id="countdown-date" type="text/x-tmpl-mustache">
                     <div>
                         <span id="start-date">Quarantine Started on {{startDate}}.</span>
@@ -96,7 +98,7 @@
                     <div id="target-countdown-date"></div>
                     <br>
                     <br>
-                    <div id="target-countdown"></div>
+                    <div id="target-countdown" class="railway"></div>
                 </div>
 
                 <div id="count-container">
@@ -105,7 +107,7 @@
                     <div id="target-count-date"></div>
                     <br>
                     <br>
-                    <div id="target-count"></div>
+                    <div id="target-count" class="railway"></div>
                 </div>
                 <br>
                 <br>
@@ -120,6 +122,7 @@
 
     <script src="https://unpkg.com/mustache@latest"></script>
     <script src="./scripts/app.js"></script>
+    <script src="./scripts/space.js"></script>
 </body>
 
 </html>
