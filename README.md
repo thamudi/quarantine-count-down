@@ -27,5 +27,7 @@ Licence: MIT
 [![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed-raw/thamudi/quarantine-count-down?style=flat-square)](https://github.com/thamudi/quarantine-count-down/pulls?q=is%3Apr+is%3Aclosed)
 
 
+### Credits
+[JS Mustache](https://github.com/janl/mustache.js)
 
-
+[Space & Stars Script by Günther Molina](https://codepen.io/Gtr487/pen/POPwyY)
