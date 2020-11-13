@@ -10,7 +10,7 @@ This simple application will countdown the days, hours, minutes and seconds unti
 
 This app was built from the ground up with nothing more than pure ES6 JS 
 
-The only library here is the [JS Mustache](https://github.com/janl/mustache.js) template engine renderer to keep the code cleaner and faster development.
+The only library here is the [JS Mustache](https://github.com/janl/mustache.js) template engine renderer to keep the code cleaner and for faster development.
 
 Licence: MIT
 
