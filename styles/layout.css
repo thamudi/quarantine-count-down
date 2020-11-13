@@ -20,3 +20,29 @@ Classes and IDs can be included here
     -ms-transform: translate(0%,-50%);
     cursor: pointer;
 }
+
+@media screen and (max-width: 375px){
+    .pad-btn-mobile {
+        padding-top:20vh ;
+        /* padding: 0;
+        margin: 0;
+        list-style: none;
+        display: flex; */
+    }
+    
+    .pad-btn-mobile .btn{
+        margin:0 10vh;
+        /* justify-content: space-around; */
+    }
+
+    .abs-display-right{
+        position: relative;
+        right: 0%;
+    }
+
+    .abs-display-left{
+        position: relative;
+        left: 0%;
+    }
+    
+}
