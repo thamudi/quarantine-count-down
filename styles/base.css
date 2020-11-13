@@ -3,3 +3,47 @@ base.css should contain any general styling on top of what is provided by a rese
 Apply to elements such as body and main
 Examples include styling of overall font and background color
 */
+
+body {
+    text-align: center;
+    padding: 10%;
+}
+
+main {
+    margin: 5%;
+}
+
+section {
+    margin: 2%;
+}
+
+fieldset, .field-set {
+    width: fit-content;
+    width: -moz-fit-content;
+    margin: auto;
+}
+
+input {
+    width: 100%;
+    width: -webkit-fill-available;
+    width: -moz-fill-available;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="password"],
+input[type="month"],
+input[type="week"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="url"],
+input[type="submit"],
+input[type="email"]{
+    height: 3em;
+    text-align: center;
+}
