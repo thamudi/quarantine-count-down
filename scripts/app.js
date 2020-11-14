@@ -96,7 +96,7 @@ function quarantineCountFormHandler(event) { // Handles user input from the quar
     checkLocalStorageState(); // Checks the localStorage state and updates the rendered HTML page
 }
 
-function quarantineFormToHandler(event) { // Handles user input from the quarantine days form
+function quarantineFromToHandler(event) { // Handles user input from the quarantine days form
     event.preventDefault(); // prevents the default behavior of the form
     const from = event.target.from.value;
     const to = event.target.to.value;
@@ -188,10 +188,10 @@ function renderCurrentDate() {
 }
 
 function renderFooter() {
-        document.getElementById('footer').classList.add('add-height');
-        setTimeout(()=>{
-            document.getElementById('footer').classList.remove('add-height');
-        }, 5000);
+    document.getElementById('footer').classList.add('add-height');
+    setTimeout(() => {
+        document.getElementById('footer').classList.remove('add-height');
+    }, 5000);
 }
 
 // ------------------------------
@@ -323,11 +323,7 @@ class QuarantineDate {
 
         this.startFormattedDate = this.startYear + '-' + this.startMonth + '-' + this.startDay;
 
-        this.startDateMonthText = this.startYear + '-' + this.startMonthText + '-' + this.startDay;
-        this.startDateDayText = this.startYear + '-' + this.startMonth + '-' + this.startDay + ' ' + this.startDayText;
         this.startDateDayMonthText = this.startYear + '-' + this.startMonthText + '-' + this.startDay + ' ' + this.startDayText;
-
-        this.startDate = new Date(this.startFormattedDate);
 
         // --------------------------------------
         // --- Quarantine Date End properties ---
@@ -350,8 +346,6 @@ class QuarantineDate {
         this.endDayText = this.daysArr[this.endDate.getDay()];
         this.endMonthText = this.months[this.endDate.getMonth()];
 
-        this.endDateMonthText = this.endYear + '-' + this.endMonthText + '-' + this.endDay;
-        this.endDateDayText = this.endYear + '-' + this.endMonth + '-' + this.endDay + ' ' + this.endDayText;
         this.endDateDayMonthText = this.endYear + '-' + this.endMonthText + '-' + this.endDay + ' ' + this.endDayText;
     }
 
@@ -360,7 +354,7 @@ class QuarantineDate {
 
             this.endDay -= this.daysInStartMonth;
             this.endMonth += 1;
-            
+
             this.daysInStartMonth = this.getDaysInMonth(this.endYear, this.endMonth);
 
             if (this.endMonth > 12) {
@@ -412,7 +406,7 @@ class CountDown {
 // ----------------------
 quarantineDaysFormId.addEventListener('submit', quarantineDaysFormHandler);
 quarantineCountDaysFormId.addEventListener('submit', quarantineCountFormHandler);
-quarantineFromToId.addEventListener('submit', quarantineFormToHandler);
+quarantineFromToId.addEventListener('submit', quarantineFromToHandler);
 resetCountDownButtonId.addEventListener('submit', clearLocalStorage);
 window.addEventListener('wheel', renderFooter)
 // -------------------
