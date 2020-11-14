@@ -193,9 +193,7 @@ function renderCurrentDate() {
 function setNewQuarantine(days, type, from = null, to = null) { // Creates a new Quarantine Day and Countdown
 
     const date = new QuarantineDate(days, from, to); // Create a new Quarantine Date
-    if (!to) {
-        date.calculateEndDate(); // Calculate the end date for the Quarantine
-    } else {
+    if (to) {
         days = date.calculateDaysDifference();
     }
     const countdown = new CountDown(days); // Create a new countdown
@@ -297,7 +295,7 @@ class QuarantineDate {
     months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     daysArr = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
-    constructor(days, from = null, to = null) {
+    constructor(days = 0, from = null, to = null) {
 
         let date = new Date();
         if (from) {
@@ -314,7 +312,7 @@ class QuarantineDate {
         this.startMonthText = this.months[date.getMonth()];
         this.startYear = date.getFullYear();
 
-        this.daysInStartMonth = this.getDaysInMonth(this.startYear, this.month);
+        this.daysInStartMonth = this.getDaysInMonth(this.startYear, this.startMonth);
 
         this.startFormattedDate = this.startYear + '-' + this.startMonth + '-' + this.startDay;
 
@@ -330,6 +328,7 @@ class QuarantineDate {
         this.endDay = this.startDay + days;
         this.endMonth = date.getMonth() + 1;
         this.endYear = date.getFullYear();
+        this.calculateEndDate();
         this.endFormattedDate = this.endYear + '-' + this.endMonth + '-' + this.endDay;
         this.endDate = new Date(this.endFormattedDate);
 
@@ -350,15 +349,18 @@ class QuarantineDate {
     }
 
     calculateEndDate() {
+        while (this.endDay > this.daysInStartMonth) {
 
-        if (this.endDay > this.daysInStartMonth) {
             this.endDay -= this.daysInStartMonth;
             this.endMonth += 1;
-        }
+            
+            this.daysInStartMonth = this.getDaysInMonth(this.endYear, this.endMonth);
 
-        if (this.endMonth > 12) {
-            this.endMonth -= 12;
-            this.endYear + 1;
+            if (this.endMonth > 12) {
+                this.endMonth -= 12;
+                this.endYear += 1;
+                this.daysInStartMonth = this.getDaysInMonth(this.endYear, this.endMonth);
+            }
         }
     }
 
@@ -371,8 +373,8 @@ class QuarantineDate {
         const differenceInTime = this.endDate.getTime() - today.getTime();
 
         // To calculate the no. of days between two dates 
-        const differenceInDays = differenceInTime / (1000 * 3600 * 24);
-        return Math.floor(differenceInDays);
+        let differenceInDays = Math.floor(differenceInTime / (1000 * 3600 * 24));
+        return differenceInDays === 0 ? differenceInDays += 1 : differenceInDays;
     }
 }
 
