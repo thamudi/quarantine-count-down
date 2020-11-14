@@ -55,3 +55,27 @@ input[type="email"]{
     height: 3em;
     text-align: center;
 }
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 0;
+  background-color: black;
+  color: white;
+  text-align: center;
+  transition: 1s;
+}
+
+a{
+    border:0 none transparent;
+    color: rgb(20, 72, 168);
+    text-decoration: none;
+}
+
+a:visited{
+    border:0 none transparent;
+    color: rgb(20, 72, 168);;
+    text-decoration: none;
+}

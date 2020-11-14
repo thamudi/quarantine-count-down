@@ -92,3 +92,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   }
   
 }
+
+.add-height{
+  height: 10vh;
+  transition: 1s;
+}

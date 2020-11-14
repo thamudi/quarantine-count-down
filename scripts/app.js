@@ -187,6 +187,13 @@ function renderCurrentDate() {
     document.getElementById('target-date').innerHTML = rendered;
 }
 
+function renderFooter() {
+        document.getElementById('footer').classList.add('add-height');
+        setTimeout(()=>{
+            document.getElementById('footer').classList.remove('add-height');
+        }, 5000);
+}
+
 // ------------------------------
 // --- Quarantine functions -----
 // ------------------------------
@@ -407,7 +414,7 @@ quarantineDaysFormId.addEventListener('submit', quarantineDaysFormHandler);
 quarantineCountDaysFormId.addEventListener('submit', quarantineCountFormHandler);
 quarantineFromToId.addEventListener('submit', quarantineFormToHandler);
 resetCountDownButtonId.addEventListener('submit', clearLocalStorage);
-
+window.addEventListener('wheel', renderFooter)
 // -------------------
 // --- app js main ---
 // -------------------
